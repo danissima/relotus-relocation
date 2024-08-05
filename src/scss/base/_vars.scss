@@ -12,8 +12,9 @@ $xl: 1280px;
 $lg: 1024px;
 $md: 768px;
 
-/* Paths */
-/* Grid setup */
+/* Animations */
+$transition: .2s ease-in-out;
+
 /* Colour palette */
 $dark: #4C4C4C;
 $gray: #B3B3B3;
@@ -27,6 +28,8 @@ $soft-orange: #FFEFEC;
 $green: #2BAF2B;
 $red: #DA121A;
 $yellow: #FFCC2F;
+$telegram: #0FABEE;
+$whatsapp: $green;
 
 $black: #000;
 $white: #fff;
