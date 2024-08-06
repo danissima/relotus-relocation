@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Relotus Relocate</title>
+  <title>Relotus Relocation</title>
   <!-- <meta name="description"
     content="Simple starter webpack 5 project template boilerplate supporting SASS/PostCSS, Babel ES7, browser syncing, code linting. Easy project setup having multiple features and developer friendly tools.">
   <meta name="keywords"
@@ -12,81 +12,177 @@
 </head>
 
 <body>
-  <header class="header">
-    <div class="container">
+  <header class="header" data-header>
+    <div class="container container_full-height">
       <div class="header__content">
-        <div class="header__logo">
-          <a href="/">
-            <svg width="147" height="56" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="#logo" />
-            </svg>
-          </a>
-        </div>
-        <ul class="header-nav">
-          <li class="header-nav__item">
-            <a class="link" href="/">Виза и ВНЖ</a>
-            <div class="header-nav__subcontent">
-              <ul class="header-nav__submenu">
-                <li class="header-nav__subitem">
-                  <a class="link" href="/">Стартап-виза в Испании</a>
-                </li>
-                <li class="header-nav__subitem">
-                  <a class="link" href="/">Виза цифрового кочевника</a>
-                </li>
-                <li class="header-nav__subitem">
-                  <a class="link" href="/">Студенческая виза</a>
-                </li>
-                <li class="header-nav__subitem">
-                  <a class="link" href="/">Виза инвестора</a>
-                </li>
-              </ul>
-            </div>
-            <div class="header-nav__overlay"></div>
-          </li>
-
-          <li class="header-nav__item">
-            <a class="link" href="/">Услуги</a>
-            <div class="header-nav__subcontent">
-              <ul class="header-nav__submenu">
-                <li class="header-nav__subitem">
-                  <a class="link" href="/">Консультация</a>
-                </li>
-                <li class="header-nav__subitem">
-                  <a class="link" href="/">Регистрация бизнеса</a>
-                </li>
-                <li class="header-nav__subitem">
-                  <a class="link" href="/">Go-To-Market</a>
-                </li>
-                <li class="header-nav__subitem">
-                  <a class="link" href="/">Получение статуста инновационной компании</a>
-                </li>
-              </ul>
-            </div>
-            <div class="header-nav__overlay"></div>
-          </li>
-
-          <li class="header-nav__item">
-            <a class="link" href="/">Журнал</a>
-          </li>
-
-          <li class="header-nav__item">
-            <a class="link" href="/">Отзывы</a>
-          </li>
-
-          <li class="header-nav__item">
-            <a class="link" href="/">Контакты</a>
-          </li>
-        </ul>
-        <div class="header__contacts">
-          <div class="header__phone">
-            <a class="link" href="tel:+34123456789">
-              <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="#phone" />
+        <div class="header__inner">
+          <div class="header__logo">
+            <a href="/">
+              <svg width="147" height="56" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="#logo" />
               </svg>
-              +34 123 456 789
             </a>
           </div>
+          <ul class="header-nav">
+            <li class="header-nav__item">
+              <a class="link" href="/">Виза и ВНЖ</a>
+              <div class="header-nav__subcontent">
+                <ul class="header-nav__submenu">
+                  <li class="header-nav__subitem">
+                    <a class="link link_lighter" href="/">Стартап-виза в Испании</a>
+                  </li>
+                  <li class="header-nav__subitem">
+                    <a class="link link_lighter" href="/">Виза цифрового кочевника</a>
+                  </li>
+                  <li class="header-nav__subitem">
+                    <a class="link link_lighter" href="/">Студенческая виза</a>
+                  </li>
+                  <li class="header-nav__subitem">
+                    <a class="link link_lighter" href="/">Виза инвестора</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="header-nav__overlay"></div>
+            </li>
 
+            <li class="header-nav__item">
+              <a class="link" href="/">Услуги</a>
+              <div class="header-nav__subcontent">
+                <ul class="header-nav__submenu">
+                  <li class="header-nav__subitem">
+                    <a class="link link_lighter" href="/">Консультация</a>
+                  </li>
+                  <li class="header-nav__subitem">
+                    <a class="link link_lighter" href="/">Регистрация бизнеса</a>
+                  </li>
+                  <li class="header-nav__subitem">
+                    <a class="link link_lighter" href="/">Go-To-Market</a>
+                  </li>
+                  <li class="header-nav__subitem">
+                    <a class="link link_lighter" href="/">Получение статуста инновационной компании</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="header-nav__overlay"></div>
+            </li>
+
+            <li class="header-nav__item">
+              <a class="link" href="/">Журнал</a>
+            </li>
+
+            <li class="header-nav__item">
+              <a class="link" href="/">Отзывы</a>
+            </li>
+
+            <li class="header-nav__item">
+              <a class="link" href="/">Контакты</a>
+            </li>
+          </ul>
+          <div class="header__contacts">
+            <div class="header__phone">
+              <a class="link" href="tel:+34123456789">
+                <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="#phone" />
+                </svg>
+                +34 123 456 789
+              </a>
+            </div>
+
+            <div class="header__socials">
+              <a class="header__social header__social_whatsapp" href="/">
+                <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="#whatsapp-circle" />
+                </svg>
+              </a>
+              <a class="header__social header__social_telegram" href="/">
+                <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="#telegram-circle" />
+                </svg>
+              </a>
+            </div>
+
+            <div class="header__buttons">
+              <button class="header__button button button_secondary button_small" type="button">
+                EN
+              </button>
+              <a href="/" class="header__button header__button_telegram button button_primary button_small">
+                Telegram
+              </a>
+              <button class="header__button header__button_popup button button_primary button_small" type="button">
+                Оценить шансы
+              </button>
+              <button class="header__button header__burger button-icon" type="button" data-burger>
+                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="#three-lines" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="burger-menu">
+          <ul class="burger-menu__nav">
+            <li class="burger-menu__link burger-menu__link_has-menu">
+              <a class="link" href="/">Виза и ВНЖ</a>
+              <ul class="burger-menu__submenu">
+                <li class="burger-menu__sublink">
+                  <a class="link link_lighter" href="/">Стартап-виза в Испании</a>
+                </li>
+                <li class="burger-menu__sublink">
+                  <a class="link link_lighter" href="/">Виза цифрового кочевника</a>
+                </li>
+                <li class="burger-menu__sublink">
+                  <a class="link link_lighter" href="/">Студенческая виза</a>
+                </li>
+                <li class="burger-menu__sublink">
+                  <a class="link link_lighter" href="/">Виза инвестора</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="burger-menu__link burger-menu__link_has-menu">
+              <a class="link" href="/">Услуги</a>
+              <ul class="burger-menu__submenu">
+                <li class="burger-menu__sublink">
+                  <a class="link link_lighter" href="/">Консультация</a>
+                </li>
+                <li class="burger-menu__sublink">
+                  <a class="link link_lighter" href="/">Регистрация бизнеса</a>
+                </li>
+                <li class="burger-menu__sublink">
+                  <a class="link link_lighter" href="/">Go-To-Market</a>
+                </li>
+                <li class="burger-menu__sublink">
+                  <a class="link link_lighter" href="/">Получение статуста инновационной компании</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="burger-menu__link">
+              <a class="link" href="/">Журнал</a>
+            </li>
+
+            <li class="burger-menu__link">
+              <a class="link" href="/">Отзывы</a>
+            </li>
+
+            <li class="burger-menu__link">
+              <a class="link" href="/">Контакты</a>
+            </li>
+          </ul>
+          <div class="burger-menu__item">
+            <div>Электронная почта</div>
+            <a href="mailto:info@website.ru" class="link">info@website.ru</a>
+          </div>
+          <address class="burger-menu__item">
+            <div>Адрес офиса</div>
+            <span>Barcelona, Avenida<br>
+              Diagonal, 416, 08037</span>
+          </address>
+          <div class="burger-menu__item">
+            <div>Позвоните нам</div>
+            <a href="tel:+34 123 456 789" class="link">+34 123 456 789</a>
+          </div>
           <div class="header__socials">
             <a class="header__social header__social_whatsapp" href="/">
               <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
@@ -99,22 +195,9 @@
               </svg>
             </a>
           </div>
-
-          <div class="header__buttons">
-            <button class="header__button button button_secondary button_small" type="button">
-              EN
-            </button>
-            <a href="/" class="header__button header__button_telegram button button_primary button_small">
-              Telegram
-            </a>
-            <button class="header__button header__button_popup button button_primary button_small" type="button">
-              Оценить шансы
-            </button>
-            <button class="header__button header__burger button-icon" type="button">
-              <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="#three-lines" />
-              </svg>
-            </button>
+          <div class="burger-menu__bottom">
+            <a href="#" class="link link_gray">Политика конфиденциальности</a>
+            <span>Все права защищены © 2024</span>
           </div>
         </div>
       </div>
