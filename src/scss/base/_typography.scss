@@ -20,3 +20,29 @@ button,
     }
   }
 }
+
+h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 57.6px;
+
+  span.h1_blue {
+    color: $blue;
+  }
+
+  @include break($md) {
+    font-size: 24px;
+    line-height: 28.8px;
+  }
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+
+  @include break($md) {
+    font-size: 16px;
+    line-height: 19.2px;
+  }
+}

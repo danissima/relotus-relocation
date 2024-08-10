@@ -1,6 +1,32 @@
+:root {
+  --radius: 20px;
+
+  @include break($md) {
+    --radius: 16px;
+  }
+}
+
 body {
-  color: $dark;
+  color: $dark-gray;
   background-color: $soft-gray;
+}
+
+main {
+  padding-top: 104px;
+
+  @include break($md) {
+    padding-top: 90px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.title {
+  color: $dark;
 }
 
 .container {
@@ -15,6 +41,30 @@ body {
 
   @include break($md) {
     padding: 0 20px;
+  }
+}
+
+.block {
+  --block-padding-x: 32px;
+  --block-padding-y: 60px;
+  background-color: $white;
+  border-radius: var(--radius);
+  padding: var(--block-padding-y) var(--block-padding-x);
+
+  &_transparent {
+    background-color: transparent;
+  }
+
+  &_equal-padding {
+    --block-padding-y: var(--block-padding-x);
+  }
+
+  @include break($md) {
+    --block-padding-x: 30px;
+
+    &:not(&_equal-padding) {
+      --block-padding-y: 30px;
+    }
   }
 }
 
@@ -74,4 +124,10 @@ body {
   &:active {
     color: $blue;
   }
+}
+
+.bg-cover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
