@@ -44,6 +44,24 @@ h6,
   }
 }
 
+main > section + section {
+  padding-top: 100px;
+}
+
+.section {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 48px;
+  }
+
+  @include break($md) {
+    &__header {
+      margin-bottom: 30px;
+    }
+  }
+}
+
 .block {
   --block-padding-x: 32px;
   --block-padding-y: 60px;

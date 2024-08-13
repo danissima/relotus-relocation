@@ -15,12 +15,12 @@
     margin-left: calc(var(--carousel-gap) * -1);
   }
 
-  // &_grid &__container {
-  //   display: grid;
-  //   grid-auto-flow: column;
-  //   gap: var(--carousel-gap);
-  //   margin-left: 0;
-  // }
+  &_grid &__container {
+    display: grid;
+    grid-auto-flow: column;
+    gap: var(--carousel-gap);
+    margin-left: 0;
+  }
 
   &__slide {
     min-width: 0;
@@ -28,7 +28,38 @@
     padding-left: var(--carousel-gap);
   }
 
-  // &_grid &__slide {
-  //   padding-left: 0;
-  // }
+  &_grid &__slide {
+    padding-left: 0;
+  }
+}
+
+.carousel-arrows {
+  display: flex;
+
+  button {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    background-color: $soft-blue;
+    transition: transform $transition;
+    color: $blue;
+
+    @include hover {
+      &:not(:disabled):hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &:not(:disabled):active {
+      transform: scale(0.9);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+
+  button + button {
+    margin-left: 8px;
+  }
 }
