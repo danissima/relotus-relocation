@@ -1,0 +1,97 @@
+.service {
+  &__carousel {
+    --carousel-gap: 24px;
+  }
+
+  .carousel__container {
+    grid-auto-columns: calc(25% - var(--carousel-gap) / 4 * 3);
+    grid-template-rows: minmax(340px, max-content);
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    height: 100%;
+    padding: 24px;
+    background-color: $soft-gray;
+
+    svg {
+      margin-bottom: 20px;
+      transition: transform $transition;
+    }
+
+    @include hover {
+      &:hover svg {
+        transform: rotate(90deg) scale(1.1);
+      }
+    }
+
+    &:active svg {
+      transform: rotate(90deg) scale(1.1);
+    }
+
+    h3 {
+      margin: auto 0 8px;
+    }
+
+    p {
+      color: $dark-gray;
+    }
+  }
+
+  .carousel__slide:nth-child(4n + 1) &__card svg {
+    color: $dark-blue;
+  }
+
+  .carousel__slide:nth-child(4n + 2) &__card svg {
+    color: $yellow;
+  }
+
+  .carousel__slide:nth-child(4n + 3) &__card svg {
+    color: $orange;
+  }
+
+  .carousel__slide:nth-child(4n + 4) &__card svg {
+    color: $blue;
+  }
+
+  @include break($xl) {
+    &__carousel {
+      --carousel-gap: 20px;
+    }
+
+    .carousel__container {
+      grid-auto-flow: unset;
+      grid-auto-columns: unset;
+      grid-template-rows: unset;
+      grid-auto-rows: minmax(240px, max-content);
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @include break($md) {
+    .carousel__container {
+      grid-auto-rows: minmax(106px, max-content);
+    }
+
+    &__card {
+      padding: 14px;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      h3 {
+        font-size: 12px;
+        line-height: 14.4px;
+        margin-bottom: 0;
+      }
+
+      p {
+        display: none;
+      }
+    }
+  }
+}
