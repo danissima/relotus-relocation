@@ -1,0 +1,127 @@
+.feedback {
+  h2 span {
+    color: $blue;
+  }
+
+  &__carousel {
+    --carousel-gap: 24px;
+    margin: 0 calc(var(--block-padding-x) * -1);
+  }
+
+  .carousel__viewport {
+    padding: 0 var(--carousel-gap);
+  }
+
+  .carousel__container {
+    grid-auto-columns: calc(25% - var(--carousel-gap) / 4 * 3);
+  }
+
+  @include break($xl) {
+    .carousel__container {
+      grid-auto-columns: calc(100% / 3 - var(--carousel-gap) / 3 * 2);
+    }
+  }
+
+  @include break($lg) {
+    .carousel__container {
+      grid-auto-columns: calc(50% - var(--carousel-gap) / 2);
+    }
+  }
+
+  @include break($md) {
+    &__carousel {
+      --carousel-gap: 20px;
+    }
+
+    .carousel-arrows {
+      display: none;
+    }
+
+    .carousel__container {
+      grid-auto-columns: 220px;
+    }
+  }
+}
+
+.feedback-card {
+  border-radius: 16px;
+  padding: 24px;
+  background-color: $soft-gray;
+  cursor: pointer;
+  transition: background-color $transition;
+
+  @include hover {
+    &:hover {
+      background-color: $blue;
+      color: $white;
+    }
+
+    &:hover &__text svg,
+    &:hover h4 {
+      color: $white;
+    }
+  }
+
+  &_active {
+    background-color: $blue;
+    color: $white;
+  }
+
+  &_active &__text svg,
+  &_active h4 {
+    color: $white;
+  }
+
+  &__avatar {
+    border-radius: 50%;
+    margin-bottom: 24px;
+    padding-bottom: 100%;
+    transition: box-shadow $transition;
+  }
+
+  &_active &__avatar {
+    box-shadow: 0 0 0 8px $white;
+  }
+
+  h4 {
+    transition: color $transition;
+  }
+
+  &__text {
+    display: grid;
+    grid-template-columns: 1fr 24px;
+    gap: 48px;
+    align-items: flex-end;
+    margin-top: 8px;
+
+    p {
+      transition: color $transition;
+      font-size: 14px;
+      line-height: 19.74px;
+    }
+
+    svg {
+      transition: color $transition;
+      color: $gray;
+    }
+  }
+
+  @include break($md) {
+    padding: 20px;
+
+    &__avatar {
+      margin-bottom: 20px;
+    }
+
+    &__text {
+      grid-template-columns: 1fr 16px;
+      gap: 24px;
+      margin-top: 10px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}
