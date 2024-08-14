@@ -41,7 +41,7 @@
     width: 48px;
     height: 48px;
     background-color: $soft-blue;
-    transition: transform $transition;
+    transition: transform $transition, opacity $transition;
     color: $blue;
 
     @include hover {
