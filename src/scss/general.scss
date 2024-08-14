@@ -154,3 +154,24 @@ main > section + section {
   background-repeat: no-repeat;
   background-position: center;
 }
+
+.social-links {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    display: flex;
+
+    &_whatsapp {
+      color: $whatsapp;
+    }
+
+    &_telegram {
+      color: $telegram;
+    }
+
+    & + & {
+      margin-left: 8px;
+    }
+  }
+}

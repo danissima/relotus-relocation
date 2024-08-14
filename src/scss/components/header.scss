@@ -46,20 +46,6 @@
 
   &__socials {
     margin: 0 30px;
-
-    a + a {
-      margin-left: 8px;
-    }
-  }
-
-  &__social {
-    &_whatsapp {
-      color: $whatsapp;
-    }
-
-    &_telegram {
-      color: $telegram;
-    }
   }
 
   &__button {

@@ -1,0 +1,159 @@
+.footer {
+  margin-top: 100px;
+  border-radius: 32px 32px 0 0;
+  padding: 80px 0;
+  background-color: $white;
+
+  &__nav,
+  &__bottom {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0 24px;
+  }
+
+  &__nav {
+    grid-template-areas:
+      'logo links2 links3 address'
+      'links1 links2 links3 address';
+    margin-bottom: 40px;
+  }
+
+  &__logo {
+    margin: -28px 0 20px -16px;
+    display: flex;
+  }
+
+  &__link {
+    font-weight: 700;
+  }
+
+  &__links > li + li {
+    margin-top: 20px;
+  }
+
+  &__sublinks {
+    margin-top: 20px;
+    max-width: 200px;
+
+    li {
+      font-size: 14px;
+      line-height: 19.74px;
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+  }
+
+  &__item {
+    & + & {
+      margin-top: 32px;
+    }
+
+    div {
+      margin-bottom: 8px;
+      font-size: 14px;
+      line-height: 19.94px;
+    }
+
+    a,
+    span {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 28.8px;
+    }
+
+    span {
+      color: $dark;
+    }
+  }
+
+  &__bottom {
+    align-items: flex-end;
+    gap: 24px;
+    font-size: 14px;
+    line-height: 19.74px;
+  }
+
+  &__copyright {
+    color: $gray;
+  }
+
+  &__policy {
+    grid-column: span 2;
+  }
+
+  @include break($lg) {
+    &__nav {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        'logo links2'
+        'address links3'
+        'address links1';
+      gap: 20px 24px;
+    }
+
+    &__copyright {
+      grid-column: span 2;
+    }
+
+    &__socials {
+      grid-column: span 4;
+    }
+  }
+
+  @include break($md) {
+    margin: 60px 20px 20px;
+    border-radius: var(--radius);
+    padding: 30px 10px;
+
+    &__nav,
+    &__bottom {
+      grid-template-columns: 1fr;
+    }
+
+    &__nav {
+      gap: 30px;
+      grid-template-areas:
+        'logo'
+        'links2'
+        'links3'
+        'links1'
+        'address';
+      margin-bottom: 30px;
+    }
+
+    &__logo {
+      margin-top: 0;
+      margin-bottom: -10px;
+    }
+
+    &__links {
+      & > li + li {
+        margin-top: 15px;
+      }
+    }
+
+    &__link {
+      font-size: 16px;
+      line-height: 19.2px;
+    }
+
+    &__sublinks {
+      li + li {
+        margin-top: 10px;
+      }
+    }
+
+    &__bottom {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    &__socials {
+      margin-bottom: 10px;
+    }
+  }
+}

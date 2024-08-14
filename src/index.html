@@ -88,13 +88,13 @@
               </a>
             </div>
 
-            <div class="header__socials">
-              <a class="header__social header__social_whatsapp" href="/">
+            <div class="header__socials social-links">
+              <a class="header__social social-links__item social-links__item_whatsapp" href="/">
                 <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
                   <use xlink:href="#whatsapp-circle" />
                 </svg>
               </a>
-              <a class="header__social header__social_telegram" href="/">
+              <a class="header__social social-links__item social-links__item_telegram" href="/">
                 <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
                   <use xlink:href="#telegram-circle" />
                 </svg>
@@ -183,13 +183,13 @@
             <div>Позвоните нам</div>
             <a href="tel:+34 123 456 789" class="link">+34 123 456 789</a>
           </div>
-          <div class="header__socials">
-            <a class="header__social header__social_whatsapp" href="/">
+          <div class="header__socials social-links">
+            <a class="header__social social-links__item social-links__item_whatsapp" href="/">
               <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
                 <use xlink:href="#whatsapp-circle" />
               </svg>
             </a>
-            <a class="header__social header__social_telegram" href="/">
+            <a class="header__social social-links__item social-links__item_telegram" href="/">
               <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
                 <use xlink:href="#telegram-circle" />
               </svg>
@@ -600,7 +600,103 @@
     </section>
   </main>
 
-  <footer>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__nav">
+        <div class="footer__logo" style="grid-area: logo;">
+          <a href="/">
+            <svg width="226" height="86" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#logo" />
+            </svg>
+          </a>
+        </div>
+
+        <ul class="footer__links" style="grid-area: links1;">
+          <li>
+            <a href="#" class="footer__link link">Журнал</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link link">Отзывы</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link link">Контакты</a>
+          </li>
+        </ul>
+
+        <div class="footer__links" style="grid-area: links2;">
+          <a href="#" class="footer__link link">Визы и ВНЖ</a>
+          <ul class="footer__sublinks">
+            <li>
+              <a href="#" class="footer__sublink link link_lighter">Стартап-виза Испании</a>
+            </li>
+            <li>
+              <a href="#" class="footer__sublink link link_lighter">Виза цифрового кочевника</a>
+            </li>
+            <li>
+              <a href="#" class="footer__sublink link link_lighter">Студенческая виза</a>
+            </li>
+            <li>
+              <a href="#" class="footer__sublink link link_lighter">Виза инвестора</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__links" style="grid-area: links3;">
+          <a href="#" class="footer__link link">Услуги</a>
+          <ul class="footer__sublinks">
+            <li>
+              <a href="#" class="footer__sublink link link_lighter">Консультация</a>
+            </li>
+            <li>
+              <a href="#" class="footer__sublink link link_lighter">Регистрация бизнеса</a>
+            </li>
+            <li>
+              <a href="#" class="footer__sublink link link_lighter">Go-To-Market</a>
+            </li>
+            <li>
+              <a href="#" class="footer__sublink link link_lighter">Получение статуста инновационной компании</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__address" style="grid-area: address;">
+          <div class="footer__item">
+            <div>Электронная почта</div>
+            <a class="link" href="mailto:info@website.ru">info@website.ru</a>
+          </div>
+          <address class="footer__item">
+            <div>Адрес офиса</div>
+            <span>
+              Barcelona, Avenida
+              Diagonal, 416, 08037
+            </span>
+          </address>
+          <div class="footer__item">
+            <div>Позвоните нам</div>
+            <a class="link" href="tel:+34 123 456 789">+34 123 456 789</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="footer__copyright">Все права защищены © 2024</div>
+        <div class="footer__policy">
+          <a href="#" class="link link_gray">Политика конфиденциальности</a>
+        </div>
+        <div class="footer__socials social-links">
+          <a class="footer__social social-links__item social-links__item_whatsapp" href="/">
+            <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#whatsapp-circle" />
+            </svg>
+          </a>
+          <a class="footer__social social-links__item social-links__item_telegram" href="/">
+            <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#telegram-circle" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <svg style=" display: none;">
