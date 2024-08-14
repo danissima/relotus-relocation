@@ -46,6 +46,10 @@ h6,
 
 main > section + section {
   padding-top: 100px;
+
+  @include break($md) {
+    padding-top: 60px;
+  }
 }
 
 .section {

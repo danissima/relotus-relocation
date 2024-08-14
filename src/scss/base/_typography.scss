@@ -3,6 +3,11 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 22.56px;
+
+  @include break($md) {
+    font-size: 14px;
+    line-height: 19.74px;
+  }
 }
 
 button,
