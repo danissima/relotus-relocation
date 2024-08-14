@@ -47,17 +47,17 @@
   border-radius: 16px;
   padding: 24px;
   background-color: $soft-gray;
-  cursor: pointer;
   transition: background-color $transition;
 
   @include hover {
-    &:hover {
+    &_has-audio:hover {
       background-color: $blue;
+      cursor: pointer;
       color: $white;
     }
 
-    &:hover &__text svg,
-    &:hover h4 {
+    &_has-audio:hover &__text svg,
+    &_has-audio:hover h4 {
       color: $white;
     }
   }
@@ -104,6 +104,10 @@
       transition: color $transition;
       color: $gray;
     }
+  }
+
+  &:not(&_has-audio) &__text svg {
+    display: none;
   }
 
   @include break($md) {
