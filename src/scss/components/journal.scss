@@ -1,0 +1,118 @@
+.journal-preview {
+  &__header {
+    align-items: center;
+  }
+
+  &__header > a,
+  &__more a {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    color: $orange;
+
+    svg {
+      margin-left: 8px;
+      transition: transform $transition;
+    }
+
+    @include hover {
+      &:hover svg {
+        transform: translateX(4px);
+      }
+    }
+
+    &:active {
+      transform: translateX(4px);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  &__more {
+    display: none;
+  }
+
+  @include break($lg) {
+    &__grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+
+  @include break($md) {
+    &__header > a {
+      display: none;
+    }
+
+    &__more {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+  }
+}
+
+.journal-card {
+  &__image {
+    display: block;
+    border-radius: 16px;
+    height: 264px;
+  }
+
+  h4 a {
+    display: inline-block;
+    padding-top: 20px;
+    transition: color $transition;
+    color: $dark-blue;
+
+    @include hover {
+      &:hover {
+        color: $orange;
+      }
+    }
+
+    &:active {
+      color: darken($orange, 5%);
+    }
+  }
+
+  p,
+  time {
+    font-size: 14px;
+    line-height: 19.74px;
+  }
+
+  p {
+    margin: 8px 0 20px;
+  }
+
+  time {
+    color: $gray;
+  }
+
+  @include break($xl) {
+    &__image {
+      height: 200px;
+    }
+  }
+
+  @include break($lg) {
+    &__image {
+      height: 300px;
+    }
+  }
+
+  @include break($md) {
+    &__image {
+      height: 264px;
+    }
+
+    p {
+      margin-top: 10px;
+    }
+  }
+}
