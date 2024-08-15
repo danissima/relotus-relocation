@@ -44,32 +44,47 @@
 }
 
 .feedback-card {
+  position: relative;
   border-radius: 16px;
   padding: 24px;
   background-color: $soft-gray;
   transition: background-color $transition;
+  overflow: hidden;
 
   @include hover {
-    &_has-audio:hover {
+    &:hover {
       background-color: $blue;
       cursor: pointer;
       color: $white;
     }
 
-    &_has-audio:hover &__text svg,
-    &_has-audio:hover h4 {
+    &:hover &__text svg,
+    &:hover h4 {
       color: $white;
+    }
+
+    &:hover &__pattern {
+      color: darken($blue, 5%);
     }
   }
 
-  &_active {
+  &:active {
     background-color: $blue;
     color: $white;
   }
 
-  &_active &__text svg,
-  &_active h4 {
+  &:active &__text svg,
+  &:active h4 {
     color: $white;
+  }
+
+  &:active &__avatar {
+    box-shadow: 0 0 0 8px $white;
+  }
+
+  & > *:not(svg) {
+    position: relative;
+    z-index: 1;
   }
 
   &__avatar {
@@ -77,10 +92,6 @@
     margin-bottom: 24px;
     padding-bottom: 100%;
     transition: box-shadow $transition;
-  }
-
-  &_active &__avatar {
-    box-shadow: 0 0 0 8px $white;
   }
 
   h4 {
@@ -108,6 +119,16 @@
 
   &:not(&_has-audio) &__text svg {
     display: none;
+  }
+
+  &__pattern {
+    position: absolute;
+    top: 30px;
+    left: -112px;
+    width: 520px;
+    height: 260px;
+    transition: color $transition;
+    color: transparent;
   }
 
   @include break($md) {
