@@ -1,0 +1,136 @@
+.slug-hero {
+  padding: var(--main-padding-top) 0 var(--section-padding);
+  overflow: hidden;
+
+  &__inner,
+  &__inner > *:not(svg) {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  &__text {
+    padding-top: 70px;
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .button {
+      margin-top: 68px;
+    }
+  }
+
+  &__list {
+    li {
+      display: flex;
+      font-size: 14px;
+      line-height: 19.94px;
+      color: $dark;
+    }
+
+    li + li {
+      margin-top: 20px;
+    }
+
+    li svg {
+      margin-right: 10px;
+      color: $blue;
+    }
+  }
+
+  &__image {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    div {
+      box-shadow: 0 0 16px 0 rgba(#bbb, 0.25);
+      border: 20px solid $white;
+      width: 100%;
+      padding-bottom: 71%;
+      transform: rotate(3deg) translateY(10px);
+    }
+  }
+
+  &__pattern {
+    position: absolute;
+    top: -90px;
+    right: -400px;
+    z-index: 0;
+    width: 1700px;
+    height: 850px;
+    color: $soft-orange;
+    transform: rotate(-16deg);
+    pointer-events: none;
+  }
+
+  &__action {
+    display: none;
+  }
+
+  & + section {
+    padding-top: 0;
+  }
+
+  @include break($lg) {
+    &__inner {
+      overflow: hidden;
+    }
+
+    &__content {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    &__text .button {
+      display: none;
+    }
+
+    &__pattern {
+      top: auto;
+      bottom: -9%;
+      right: -68%;
+      width: 238%;
+      height: 70%;
+    }
+
+    &__action {
+      display: inline-block;
+      margin-top: 60px;
+      width: 100%;
+    }
+  }
+
+  @include break($md) {
+    &__text {
+      padding-top: 20px;
+
+      h1 {
+        margin-bottom: 20px;
+      }
+    }
+
+    &__list {
+      li {
+        font-size: 12px;
+        line-height: 17.09px;
+      }
+
+      li + li {
+        margin-top: 10px;
+      }
+    }
+
+    &__image div {
+      border-width: 7px;
+      padding-bottom: 60%;
+      transform: rotate(7deg) translateY(20px);
+    }
+  }
+}
