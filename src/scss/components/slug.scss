@@ -425,3 +425,137 @@
     }
   }
 }
+
+.slug-steps {
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'image title'
+      'image items';
+    gap: 0 24px;
+  }
+
+  &__image {
+    div {
+      position: sticky;
+      top: 104px;
+      padding: 0 0 100%;
+    }
+
+    button {
+      position: absolute;
+      left: var(--block-padding-x);
+      bottom: var(--block-padding-y);
+    }
+  }
+
+  &__title {
+    border-radius: var(--radius) var(--radius) 0 0;
+    padding-bottom: 16px;
+  }
+
+  &__items {
+    counter-reset: step 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(200px, max-content);
+    gap: 46px;
+    border-radius: 0 0 var(--radius) var(--radius);
+  }
+
+  &__action {
+    display: none;
+  }
+
+  @include break($lg) {
+    &__grid {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        'title'
+        'image'
+        'items';
+      gap: 30px;
+    }
+
+    &__image {
+      div {
+        position: static;
+        padding-bottom: 65%;
+      }
+
+      button {
+        display: none;
+      }
+    }
+
+    &__items,
+    &__title {
+      border-radius: var(--radius);
+    }
+
+    &__title {
+      padding-bottom: var(--block-padding-y);
+    }
+
+    &__items {
+      grid-auto-rows: auto;
+      gap: 42px;
+      padding: 42px var(--block-padding-y);
+    }
+
+    &__action {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+}
+
+.slug-steps-card {
+  counter-increment: step 1;
+  position: relative;
+  border-radius: 8px;
+  padding: 40px 24px;
+  background-color: $soft-gray;
+
+  &::before {
+    content: counter(step) ' шаг';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+    padding: 10px 32px;
+    background-color: $orange;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.2px;
+    color: $white;
+  }
+
+  h3 {
+    margin-bottom: 12px;
+  }
+
+  @include break($md) {
+    border-radius: 16px;
+    padding: 24px;
+
+    &::before {
+      top: -12px;
+      padding: 2px 18px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 19.94px;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 13px;
+      line-height: 18.33px;
+    }
+  }
+}
