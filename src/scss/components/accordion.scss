@@ -1,0 +1,112 @@
+.accordion {
+  &:not(&_custom) {
+    --accordion-padding: 30px;
+    border: 1px solid #efefef;
+    border-radius: 10px;
+    background-color: $white;
+  }
+
+  &__trigger {
+    width: 100%;
+  }
+
+  &__head {
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+    padding: var(--accordion-padding);
+  }
+
+  &__icon {
+    --accordion-icon-scale: scale(1);
+    --accordion-icon-rotate: rotate(0deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: var(--accordion-icon-scale) var(--accordion-icon-rotate);
+    margin-left: 24px;
+    border-radius: 50%;
+    min-width: 48px;
+    height: 48px;
+    background-color: $soft-orange;
+    transition:
+      transform $transition-slow,
+      background-color $transition,
+      color $transition;
+    color: $orange;
+  }
+
+  @include hover {
+    &__trigger:hover &__icon {
+      --accordion-icon-scale: scale(1.1);
+      background-color: $orange;
+      color: $white;
+    }
+  }
+
+  &__trigger:active &__icon {
+    --accordion-icon-scale: scale(0.9);
+    background-color: $orange;
+    color: $white;
+  }
+
+  &_opened:not(&_custom) &__icon {
+    --accordion-icon-rotate: rotate(180deg);
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 28.8px;
+    font-weight: 700;
+    text-align: left;
+    color: $dark;
+  }
+
+  &__content {
+    grid-template-rows: 0fr;
+    display: grid;
+    transition: grid-template-rows $transition-slow;
+    overflow: hidden;
+  }
+
+  &_opened &__content {
+    grid-template-rows: 1fr;
+  }
+
+  &__content > div {
+    overflow: hidden;
+    grid-row: 1 / span 2;
+  }
+
+  &:not(&_custom) &__inner {
+    padding: 0 var(--accordion-padding) var(--accordion-padding);
+  }
+
+  @include break($md) {
+    &:not(&_custom) {
+      --accordion-padding: 24px;
+      border-radius: var(--radius);
+    }
+
+    &__title {
+      font-size: 16px;
+      line-height: 19.2px;
+    }
+
+    &__icon {
+      margin-left: 10px;
+      min-width: 30px;
+      height: 30px;
+
+      svg {
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+    &:not(&_custom) &__inner {
+      font-size: 13px;
+      line-height: 18.33px;
+    }
+  }
+}

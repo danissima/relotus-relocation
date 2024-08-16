@@ -1,8 +1,10 @@
+import { setupAccordion, openAccordion } from './accordion.js'
 import setupCarousel from './carousel.js'
 
 setupDocumentsCarousel()
 setupDocumentsCards()
 setupForCarousel()
+setupQuestionsSection()
 
 function setupDocumentsCarousel() {
   const carousel = document.querySelector('[data-carousel="slug-documents"]')
@@ -59,4 +61,12 @@ function setupForCarousel() {
     },
     carouselArrows,
   )
+}
+
+function setupQuestionsSection() {
+  const accordionsContainer = document.querySelector('[data-slug-questions]')
+  const accordions = accordionsContainer.querySelectorAll('[data-accordion]')
+
+  accordions.forEach((accordion) => setupAccordion(accordion, accordions))
+  openAccordion(accordions[0])
 }
