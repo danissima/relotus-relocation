@@ -70,6 +70,18 @@ h4 {
   }
 }
 
+h5 {
+  font-size: 16px;
+  line-height: 19.2px;
+  font-weight: 700;
+
+  @include break($md) {
+    font-size: 13px;
+    line-height: 18.33px;
+    font-weight: 400;
+  }
+}
+
 .numbers,
 .numbers-pseudo::before,
 .numbers-pseudo::after {

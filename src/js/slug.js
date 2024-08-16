@@ -6,6 +6,7 @@ setupDocumentsCards()
 setupForCarousel()
 setupQuestionsSection()
 setupTeamCarousel()
+setupYoutubeCarousel()
 
 function setupDocumentsCarousel() {
   const carousel = document.querySelector('[data-carousel="slug-documents"]')
@@ -80,6 +81,35 @@ function setupTeamCarousel() {
   const carouselSlides = carousel.querySelectorAll('[data-carousel-slide]')
   const isCarouselActive = (carouselSlides.length > 4 && window.innerWidth >= 1280)
     || (carouselSlides.length > 3 && window.innerWidth < 1280)
+    || (carouselSlides.length > 2 && window.innerWidth < 1024)
+    || (carouselSlides.length > 1 && window.innerWidth < 768)
+
+  if (!isCarouselActive) {
+    carouselArrows.style.display = 'none'
+    return
+  }
+
+  setupCarousel(
+    carousel,
+    {
+      align: 'start',
+      breakpoints: {
+        '(max-width: 767px)': {
+          align: 'center',
+        },
+      },
+    },
+    carouselArrows,
+  )
+}
+
+function setupYoutubeCarousel() {
+  const carousel = document.querySelector('[data-carousel="slug-youtube"]')
+  if (!carousel) return
+
+  const carouselArrows = document.querySelector('[data-carousel-arrows="slug-youtube"]')
+  const carouselSlides = carousel.querySelectorAll('[data-carousel-slide]')
+  const isCarouselActive = (carouselSlides.length > 3 && window.innerWidth >= 1024)
     || (carouselSlides.length > 2 && window.innerWidth < 1024)
     || (carouselSlides.length > 1 && window.innerWidth < 768)
 

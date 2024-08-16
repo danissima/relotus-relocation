@@ -719,3 +719,97 @@
     }
   }
 }
+
+.slug-youtube {
+  .section__header span {
+    color: $blue;
+  }
+
+  &__carousel {
+    --carousel-gap: 30px;
+    margin: 0 calc(var(--block-padding-x) * -1);
+  }
+
+  .carousel__viewport {
+    padding: 0 var(--carousel-gap);
+  }
+
+  .carousel__container {
+    grid-auto-columns: calc(100% / 3 - var(--carousel-gap) / 3 * 2);
+  }
+
+  &__link {
+    margin-top: 54px;
+  }
+
+  @include break($lg) {
+    .carousel__container {
+      grid-auto-columns: calc(50% - var(--carousel-gap) / 2);
+    }
+  }
+
+  @include break($md) {
+    .carousel-arrows {
+      display: none;
+    }
+
+    &__carousel {
+      --carousel-gap: 20px;
+    }
+
+    .carousel__container {
+      grid-auto-columns: 275px;
+    }
+
+    &__link {
+      margin-top: 30px;
+      width: 100%;
+    }
+  }
+}
+
+.slug-youtube-card {
+  cursor: pointer;
+
+  &__image {
+    position: relative;
+    margin-bottom: 24px;
+    border-radius: 10px;
+    padding-bottom: 60%;
+
+    svg {
+      box-sizing: content-box;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 5px solid $white;
+      border-radius: 50%;
+      background-color: $white;
+      transition: transform $transition;
+      color: $blue;
+    }
+  }
+
+  h5 {
+    transition: color $transition;
+  }
+
+  @include hover {
+    &:hover h5 {
+      color: $blue;
+    }
+
+    &:hover &__image svg {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+  }
+
+  &:active h5 {
+    color: $blue;
+  }
+
+  &:active &__image svg {
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+}
