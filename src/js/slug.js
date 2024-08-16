@@ -5,6 +5,7 @@ setupDocumentsCarousel()
 setupDocumentsCards()
 setupForCarousel()
 setupQuestionsSection()
+setupTeamCarousel()
 
 function setupDocumentsCarousel() {
   const carousel = document.querySelector('[data-carousel="slug-documents"]')
@@ -69,4 +70,34 @@ function setupQuestionsSection() {
 
   accordions.forEach((accordion) => setupAccordion(accordion, accordions))
   openAccordion(accordions[0])
+}
+
+function setupTeamCarousel() {
+  const carousel = document.querySelector('[data-carousel="team"]')
+  if (!carousel) return
+
+  const carouselArrows = document.querySelector('[data-carousel-arrows="team"]')
+  const carouselSlides = carousel.querySelectorAll('[data-carousel-slide]')
+  const isCarouselActive = (carouselSlides.length > 4 && window.innerWidth >= 1280)
+    || (carouselSlides.length > 3 && window.innerWidth < 1280)
+    || (carouselSlides.length > 2 && window.innerWidth < 1024)
+    || (carouselSlides.length > 1 && window.innerWidth < 768)
+
+  if (!isCarouselActive) {
+    carouselArrows.style.display = 'none'
+    return
+  }
+
+  setupCarousel(
+    carousel,
+    {
+      align: 'start',
+      breakpoints: {
+        '(max-width: 767px)': {
+          align: 'center',
+        },
+      },
+    },
+    carouselArrows,
+  )
 }

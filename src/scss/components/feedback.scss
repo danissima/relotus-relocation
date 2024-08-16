@@ -52,33 +52,33 @@
   overflow: hidden;
 
   @include hover {
-    &:hover {
+    &:not(&_static):hover {
       background-color: $blue;
       cursor: pointer;
       color: $white;
     }
 
-    &:hover &__text svg,
-    &:hover h4 {
+    &:not(&_static):hover &__text svg,
+    &:not(&_static):hover h4 {
       color: $white;
     }
 
-    &:hover &__pattern {
+    &:not(&_static):hover &__pattern {
       color: darken($blue, 5%);
     }
   }
 
-  &:active {
+  &:not(&_static):active {
     background-color: $blue;
     color: $white;
   }
 
-  &:active &__text svg,
-  &:active h4 {
+  &:not(&_static):active &__text svg,
+  &:not(&_static):active h4 {
     color: $white;
   }
 
-  &:active &__avatar {
+  &:not(&_static):active &__avatar {
     box-shadow: 0 0 0 8px $white;
   }
 
