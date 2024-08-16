@@ -2,6 +2,7 @@ import setupCarousel from './carousel.js'
 
 setupDocumentsCarousel()
 setupDocumentsCards()
+setupForCarousel()
 
 function setupDocumentsCarousel() {
   const carousel = document.querySelector('[data-carousel="slug-documents"]')
@@ -32,4 +33,30 @@ function setupDocumentsCards() {
     card.dataset.slugDocumentsCard = number
     // card.style.setProperty('--index', number)
   })
+}
+
+function setupForCarousel() {
+  const carousel = document.querySelector('[data-carousel="slug-for"]')
+  if (!carousel) return
+
+  const carouselArrows = document.querySelector('[data-carousel-arrows="slug-for"]')
+  const carouselSlides = carousel.querySelectorAll('[data-carousel-slide]')
+  const isCarouselActive = (carouselSlides.length > 3 && window.innerWidth >= 1440)
+    || (carouselSlides.length > 2 && window.innerWidth < 1440)
+    || (carouselSlides.length > 1 && window.innerWidth < 768)
+
+  if (!isCarouselActive) {
+    carouselArrows.style.display = 'none'
+    return
+  }
+
+  setupCarousel(
+    carousel,
+    {
+      align: 'start',
+      dragFree: true,
+      slidesToScroll: 2,
+    },
+    carouselArrows,
+  )
 }
