@@ -213,3 +213,23 @@
     }
   }
 }
+
+.journal-more {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 24px;
+  }
+
+  @include break($lg) {
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include break($md) {
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
