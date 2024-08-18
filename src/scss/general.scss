@@ -13,6 +13,11 @@ body {
   background-color: $soft-gray;
 }
 
+html,
+body {
+  scroll-behavior: smooth;
+}
+
 main {
   --main-padding-top: 104px;
   padding-top: var(--main-padding-top);
@@ -51,7 +56,8 @@ h6,
   }
 }
 
-main > section + section {
+main > section + section,
+main > article + section {
   padding-top: var(--section-padding);
 }
 

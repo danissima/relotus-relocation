@@ -1,0 +1,146 @@
+.article {
+  &__header,
+  &__content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px 56px;
+  }
+
+  &__header {
+    margin-bottom: 50px;
+
+    h1 span {
+      color: $orange;
+    }
+
+    time {
+      text-align: right;
+      color: $dark;
+      font-size: 18px;
+      line-height: 25.38px;
+    }
+  }
+
+  &__content {
+    grid-template-areas:
+      'banner anchors'
+      'text anchors';
+  }
+
+  &__banner {
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  &__text {
+    h3 {
+      scroll-margin-top: var(--main-padding-top);
+      color: $orange;
+      margin-bottom: 30px;
+    }
+
+    p + h3 {
+      margin-top: 30px;
+    }
+
+    p {
+      margin: 20px 0;
+    }
+
+    img {
+      border-radius: 10px;
+    }
+  }
+
+  &__anchors {
+    .block {
+      position: sticky;
+      top: var(--main-padding-top);
+    }
+
+    h3 {
+      margin-bottom: 20px;
+      color: $dark-blue;
+    }
+
+    ol,
+    ul {
+      padding-left: 24px;
+    }
+
+    ul {
+      list-style-type: disc;
+    }
+  }
+
+  &__anchor {
+    &_active {
+      color: $blue !important;
+    }
+  }
+
+  @include break($lg) {
+    &__header,
+    &__content {
+      grid-template-columns: 1fr;
+    }
+
+    &__header {
+      gap: 10px;
+      margin-bottom: 30px;
+
+      time {
+        text-align: left;
+      }
+    }
+
+    &__content {
+      grid-template-areas:
+        'banner'
+        'anchors'
+        'text';
+      gap: 20px;
+    }
+
+    &__anchors {
+      position: static;
+    }
+
+    &__text {
+      .block {
+        --block-padding-x: 0;
+        background-color: transparent;
+      }
+    }
+  }
+
+  @include break($md) {
+    &__header {
+      time {
+        font-size: 13px;
+        line-height: 18.33px;
+      }
+    }
+
+    &__anchors {
+      font-size: 13px;
+      line-height: 18.33px;
+
+      h3 {
+        margin-bottom: 20px;
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+
+    &__text {
+      h3 {
+        margin-bottom: 20px;
+      }
+
+      p {
+        margin: 16px 0;
+      }
+    }
+  }
+}

@@ -475,7 +475,7 @@
   &__image {
     div {
       position: sticky;
-      top: 104px;
+      top: var(--main-padding-top);
       padding: 0 0 100%;
     }
 
