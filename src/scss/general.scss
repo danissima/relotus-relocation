@@ -122,6 +122,16 @@ main > article + section {
     border: 1px solid #cfcfcf;
   }
 
+  &_telegram {
+    background-color: $telegram;
+    color: $white;
+  }
+
+  &_whatsapp {
+    background-color: $whatsapp;
+    color: $white;
+  }
+
   &_small {
     padding: 8px 32px;
   }

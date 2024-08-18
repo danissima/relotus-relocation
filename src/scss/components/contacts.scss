@@ -1,0 +1,135 @@
+.contacts {
+  .block {
+    --block-padding-x: 68px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'links address'
+      'map map';
+    grid-template-rows: auto 400px;
+    gap: 50px 200px;
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      font-size: 48px;
+      line-height: 57.6px;
+      font-weight: 700;
+    }
+
+    & + & {
+      margin-top: 20px;
+    }
+  }
+
+  &__label {
+    margin-bottom: 8px;
+    font-size: 18px;
+    line-height: 25.38px;
+  }
+
+  &__address {
+    address div {
+      font-size: 24px;
+      line-height: 28.8px;
+      font-weight: 700;
+      color: $dark;
+    }
+  }
+
+  &__media {
+    display: flex;
+    margin-top: 40px;
+
+    .button + .button {
+      margin-left: 20px;
+    }
+  }
+
+  &__map {
+    border-radius: 16px;
+  }
+
+  @include break($xl) {
+    &__grid {
+      gap: 50px;
+    }
+  }
+
+  @include break($lg) {
+    &__grid {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        'links'
+        'map'
+        'address';
+    }
+  }
+
+  @include break($md) {
+    .block {
+      --block-padding-x: 30px;
+    }
+
+    &__grid {
+      gap: 30px;
+      grid-template-rows: auto 280px auto;
+    }
+
+    &__links {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    &__link {
+      a {
+        font-size: 32px;
+        line-height: 38.4px;
+      }
+
+      &_email a {
+        margin-top: 8px;
+        font-size: 16px;
+        line-height: 19.2px;
+      }
+
+      & + & {
+        margin-top: 0;
+      }
+    }
+
+    &__label {
+      font-size: 14px;
+      line-height: 19.2px;
+    }
+
+    &__link:not(address) &__label {
+      display: none;
+    }
+
+    &__address address div {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    &__media {
+      margin-top: 30px;
+
+      .button {
+        font-size: 14px;
+        line-height: 20px;
+        width: 100%;
+      }
+
+      .button + .button {
+        margin-left: 16px;
+      }
+    }
+  }
+}
