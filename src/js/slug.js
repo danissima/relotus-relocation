@@ -67,6 +67,10 @@ function setupForCarousel() {
 
 function setupQuestionsSection() {
   const accordionsContainer = document.querySelector('[data-slug-questions]')
+  if (!accordionsContainer) {
+    return
+  }
+
   const accordions = accordionsContainer.querySelectorAll('[data-accordion]')
 
   accordions.forEach((accordion) => setupAccordion(accordion, accordions))
