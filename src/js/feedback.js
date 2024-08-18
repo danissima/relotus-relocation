@@ -1,11 +1,21 @@
 import setupCarousel from './carousel.js'
 
 setupFeedbackCards()
+setupFeedbackCardsColors()
 setupFeedbackCarousel()
 
 function setupFeedbackCards() {
   const cards = document.querySelectorAll('[data-feedback-card]')
   cards.forEach((card) => setupFeedbackCard(card))
+}
+
+function setupFeedbackCardsColors() {
+  const container = document.querySelector('[data-feedback-all]')
+  if (!container) {
+    return
+  }
+
+  const cards = document.querySelectorAll('[data-feedback-card]')
 }
 
 function setupFeedbackCard(cardNode) {}

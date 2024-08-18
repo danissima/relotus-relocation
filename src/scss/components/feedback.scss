@@ -1,3 +1,48 @@
+.feedback-all {
+  h1 {
+    margin-bottom: 50px;
+
+    span {
+      color: $blue;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px 24px;
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  @include break($xl) {
+    &__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @include break($lg) {
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include break($md) {
+    &__grid {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 20px;
+    }
+
+    &__controls {
+      margin-top: 30px;
+    }
+  }
+}
+
 .feedback {
   h2 span {
     color: $blue;
@@ -44,6 +89,8 @@
 }
 
 .feedback-card {
+  --feedback-card-color: #{$blue};
+  --feedback-card-color-dark: #{darken($blue, 5%)};
   position: relative;
   border-radius: 16px;
   padding: 24px;
@@ -51,9 +98,19 @@
   transition: background-color $transition;
   overflow: hidden;
 
+  &_orange {
+    --feedback-card-color: #{$orange};
+    --feedback-card-color-dark: #{darken($orange, 5%)};
+  }
+
+  &_yellow {
+    --feedback-card-color: #{$yellow};
+    --feedback-card-color-dark: #{darken($yellow, 5%)};
+  }
+
   @include hover {
     &:not(&_static):hover {
-      background-color: $blue;
+      background-color: var(--feedback-card-color);
       cursor: pointer;
       color: $white;
     }
@@ -64,12 +121,12 @@
     }
 
     &:not(&_static):hover &__pattern {
-      color: darken($blue, 5%);
+      color: var(--feedback-card-color-dark);
     }
   }
 
   &:not(&_static):active {
-    background-color: $blue;
+    background-color: var(--feedback-card-color);
     color: $white;
   }
 
