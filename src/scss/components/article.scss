@@ -33,27 +33,6 @@
     overflow: hidden;
   }
 
-  &__text {
-    h2,
-    h3,
-    & > .block {
-      scroll-margin-top: var(--main-padding-top);
-    }
-
-    h2,
-    h3 {
-      color: $orange;
-    }
-
-    & > .block > * {
-      margin: revert;
-    }
-
-    img {
-      border-radius: 10px;
-    }
-  }
-
   &__anchors {
     .block {
       position: sticky;
@@ -137,16 +116,6 @@
         margin-bottom: 20px;
         font-size: 20px;
         line-height: 24px;
-      }
-    }
-
-    &__text {
-      h3 {
-        margin-bottom: 20px;
-      }
-
-      p {
-        margin: 16px 0;
       }
     }
   }

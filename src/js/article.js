@@ -5,7 +5,7 @@ function setupArticleAnchors() {
   const anchorsLinks = document.querySelector('[data-article-anchors]')
   const articleTitle = document.querySelector('[data-article-title]')
 
-  if (!article || !anchorsLinks || window.innerWidth < 1024) {
+  if (!article || !anchorsLinks) {
     return
   }
 
@@ -24,6 +24,10 @@ function setupArticleAnchors() {
   }
 
   generateAnchorsLinks()
+
+  if (window.innerWidth < 1024) {
+    return
+  }
 
   setActiveLink(headings[0].id)
   window.addEventListener('scroll', handleWindowScroll)
