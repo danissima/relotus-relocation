@@ -122,11 +122,14 @@
     position: relative;
   }
 
+  &__item > span,
   &__item > a {
     display: flex;
     align-items: center;
     height: 100%;
     padding: 0 20px;
+    transition: color $transition;
+    color: $dark;
   }
 
   &__subcontent {
@@ -150,10 +153,13 @@
     background-color: $white;
   }
 
-  &__item a:hover ~ &__subcontent,
-  &__subcontent:hover {
+  &__item:hover &__subcontent {
     opacity: 1;
     visibility: visible;
+  }
+
+  &__item:hover > span {
+    color: $orange;
   }
 
   &__overlay {
@@ -167,8 +173,7 @@
     transition: background-color $transition;
   }
 
-  &__item a:hover ~ &__overlay,
-  &__subcontent:hover ~ &__overlay {
+  &__item:hover &__overlay {
     background-color: rgba(#1d1d1d, 0.8);
   }
 
