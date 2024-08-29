@@ -109,6 +109,7 @@ main > article + section {
 }
 
 .button {
+  position: relative;
   display: inline-block;
   border-radius: 32px;
   padding: 16px 32px;
@@ -197,6 +198,26 @@ main > article + section {
 
   &_small {
     padding: 8px 32px;
+  }
+
+  &_loading {
+    pointer-events: none;
+  }
+
+  &_loading &__text {
+    opacity: 0;
+  }
+
+  .loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+
+  &_loading .loader {
+    opacity: 1;
   }
 
   @include break($md) {
@@ -564,4 +585,29 @@ main > article + section {
     5.256% 21.931%,
     5.775% 21.648%
   );
+}
+
+.loader {
+  --loader-color: #{$white};
+  --loader-stroke: 6px;
+  display: flex;
+}
+
+.loader > span {
+  display: inline-block;
+  width: 22px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(farthest-side, var(--loader-color) 94%, #0000) top/var(--loader-stroke) var(--loader-stroke)
+      no-repeat,
+    conic-gradient(#0000 30%, var(--loader-color));
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - var(--loader-stroke)), #000 0);
+  animation: loader 1s infinite linear;
+}
+
+@keyframes loader {
+  100% {
+    rotate: 1turn;
+  }
 }
