@@ -67,6 +67,14 @@ main > article + section {
     justify-content: space-between;
     align-items: flex-end;
     margin-bottom: 48px;
+
+    h2 {
+      margin-right: 32px;
+    }
+
+    & > a {
+      white-space: nowrap;
+    }
   }
 
   @include break($md) {
