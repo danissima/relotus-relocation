@@ -8,15 +8,68 @@ function setupArticleAnchors() {
     return
   }
 
-  const anchors = article.querySelectorAll('[id]')
+  const headings = article.querySelectorAll('h2, h3')
   let currentAnchorId = ''
   const SCROLL_MARGIN_TOP = 106
 
-  setActiveLink(anchors[0].id)
+  generateAnchorsLinks()
+
+  setActiveLink(headings[0].id)
   window.addEventListener('scroll', handleWindowScroll)
 
+  function generateAnchorsLinks() {
+    let listItem = null
+    let ul = null
+
+    headings.forEach((heading, index) => {
+      if (heading.tagName === 'H3' && index === 0) {
+        return
+      }
+
+      const nextHeading = headings[index + 1]
+
+      const link = document.createElement('a')
+      link.classList.add('link')
+      link.innerHTML = heading.textContent
+
+      heading.id = `heading-${index + 1}`
+      link.href = `#heading-${index + 1}`
+
+      if (!listItem) {
+        listItem = document.createElement('li')
+      }
+
+      if (heading.tagName === 'H2') {
+        listItem.append(link)
+
+        if (!nextHeading || nextHeading.tagName === 'H2') {
+          anchorsLinks.append(listItem)
+        }
+
+        return
+      }
+
+      if (heading.tagName === 'H3') {
+        const listItemSecond = document.createElement('li')
+        listItemSecond.append(link)
+
+        if (!ul) {
+          ul = document.createElement('ul')
+        }
+
+        ul.append(listItemSecond)
+
+        if (!nextHeading || nextHeading.tagName === 'H2') {
+          listItem.append(ul)
+          anchorsLinks.append(listItem)
+          listItem = null
+        }
+      }
+    })
+  }
+
   function handleWindowScroll() {
-    anchors.forEach((anchor) => {
+    headings.forEach((anchor) => {
       const top = window.scrollY
       const distance = top - anchor.offsetTop + SCROLL_MARGIN_TOP
       const anchorId = anchor.id

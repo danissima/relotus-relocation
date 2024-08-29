@@ -29,18 +29,14 @@
   }
 
   &__text {
+    h2,
     h3 {
       scroll-margin-top: var(--main-padding-top);
       color: $orange;
-      margin-bottom: 30px;
     }
 
-    p + h3 {
-      margin-top: 30px;
-    }
-
-    p {
-      margin: 20px 0;
+    & > .block > * {
+      margin: revert;
     }
 
     img {
