@@ -1,4 +1,9 @@
 .contacts {
+  .block,
+  .breadcrumbs {
+    margin-top: 50px;
+  }
+
   .block {
     --block-padding-x: 68px;
   }
@@ -73,6 +78,11 @@
   }
 
   @include break($md) {
+    .block,
+    .breadcrumbs {
+      margin-top: 20px;
+    }
+
     .block {
       --block-padding-x: 30px;
     }

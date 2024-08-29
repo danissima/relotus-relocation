@@ -1,0 +1,33 @@
+.breadcrumbs {
+  &__list {
+    display: flex;
+    list-style-type: none;
+  }
+
+  &__item {
+    font-size: 18px;
+    line-height: 25.38px;
+    white-space: nowrap;
+
+    & + &::before {
+      content: '—';
+      margin-left: 0.25em;
+    }
+
+    &:last-child {
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      white-space: unset;
+    }
+  }
+
+  @include break($md) {
+    &__item {
+      font-size: 12px;
+      line-height: 17px;
+    }
+  }
+}
