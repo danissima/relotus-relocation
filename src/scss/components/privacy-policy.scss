@@ -1,0 +1,54 @@
+.privacy-policy {
+  --breadcrumbs-margin: 50px;
+  h1,
+  .breadcrumbs {
+    margin-top: var(--breadcrumbs-margin);
+  }
+
+  h1,
+  .block {
+    max-width: 848px;
+  }
+
+  h1 {
+    margin-bottom: var(--breadcrumbs-margin);
+  }
+
+  h3 {
+    color: $orange;
+  }
+
+  .block > * {
+    margin: revert;
+  }
+
+  .block > *:not(h3) {
+    font-size: 18px;
+    line-height: 25.38px;
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid #e9e9e9;
+    border-collapse: collapse;
+  }
+
+  table td {
+    padding: 20px 40px 20px 20px;
+  }
+
+  ul {
+    padding: revert;
+    list-style-type: revert;
+  }
+
+  @include break($md) {
+    --breadcrumbs-margin: 20px;
+
+    .block > *:not(h3) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
