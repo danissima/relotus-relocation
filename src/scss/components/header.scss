@@ -184,6 +184,7 @@
   }
 
   @include break($xl) {
+    &__item > span,
     &__item > a {
       padding: 0 15px;
     }
