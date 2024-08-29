@@ -1,10 +1,6 @@
 .feedback-all {
   h1 {
     margin-bottom: 50px;
-
-    span {
-      color: $blue;
-    }
   }
 
   &__grid {
@@ -44,10 +40,6 @@
 }
 
 .feedback {
-  h2 span {
-    color: $blue;
-  }
-
   &__carousel {
     --carousel-gap: 24px;
     margin: 0 calc(var(--block-padding-x) * -1);

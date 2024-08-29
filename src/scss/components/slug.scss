@@ -721,10 +721,6 @@
 }
 
 .slug-youtube {
-  .section__header span {
-    color: $blue;
-  }
-
   &__carousel {
     --carousel-gap: 30px;
     margin: 0 calc(var(--block-padding-x) * -1);

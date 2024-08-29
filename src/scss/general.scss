@@ -229,12 +229,18 @@ main > article + section {
   }
 }
 
-h1 {
-  span.h1_blue {
+.h1,
+.h2 {
+  mark {
+    background-color: transparent;
+    color: inherit;
+  }
+
+  &_blue mark {
     color: $blue;
   }
 
-  span.h1_orange {
+  &_orange mark {
     color: $orange;
   }
 }
