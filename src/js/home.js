@@ -8,6 +8,8 @@ function setupHeroSection() {
 
   const carouselViewport = carousel.querySelector('[data-carousel-viewport]')
   const carouselImages = carousel.querySelectorAll('[data-carousel-image]')
+  const carouselLinks = carousel.querySelectorAll('[data-carousel-slide-link]')
+  const carouselLink = carousel.querySelector('[data-link]')
   const carouselDotsContainer = carousel.querySelector('[data-carousel-dots]')
   const carouselApi = EmblaCarousel(carouselViewport)
   const carouselDots = generateDots()
@@ -28,6 +30,9 @@ function setupHeroSection() {
     /* change active dot */
     carouselDots[previousSlideIndex].classList.remove('home-hero-slider__dot_active')
     carouselDots[currentSlideIndex].classList.add('home-hero-slider__dot_active')
+
+    /* change "more" link href */
+    carouselLink.href = carouselLinks[currentSlideIndex].dataset.carouselSlideLink
   }
 
   function generateDots() {
