@@ -73,6 +73,10 @@
   }
 
   @include break($md) {
+    &__content {
+      padding: 30px;
+    }
+
     &__title {
       font-size: 20px;
       line-height: 24px;

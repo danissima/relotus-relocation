@@ -1,5 +1,7 @@
 import '../scss/app.scss';
 
+import Maska from './libs/maska.js'
+
 import './header.js'
 import './home.js'
 import './slug.js'
@@ -9,3 +11,5 @@ import './feedback.js'
 import './journal.js'
 import './article.js'
 import './chances-form.js'
+
+const mask = new Maska.MaskInput('[data-maska]')
