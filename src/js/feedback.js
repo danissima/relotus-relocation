@@ -1,24 +1,75 @@
 import setupCarousel from './carousel.js'
+import { openModal, setupModal } from './modal.js'
 
 setupFeedbackCards()
-setupFeedbackCardsColors()
 setupFeedbackCarousel()
 
 function setupFeedbackCards() {
   const cards = document.querySelectorAll('[data-feedback-card]')
-  cards.forEach((card) => setupFeedbackCard(card))
-}
+  const modal = document.querySelector('[data-modal="feedback"]')
 
-function setupFeedbackCardsColors() {
-  const container = document.querySelector('[data-feedback-all]')
-  if (!container) {
+  if (!cards.length || !modal) {
     return
   }
 
-  const cards = document.querySelectorAll('[data-feedback-card]')
+  const modalTitle = modal.querySelector('[data-modal-title]')
+  const modalDescription = modal.querySelector('[data-modal-description]')
+
+  setupModal(modal)
+
+  modal.addEventListener('modal-close', async () => {
+    const player = modal.querySelector('lite-youtube')
+    if (player) {
+      // const ytPlayer = await player.getYTPlayer();
+      // ytPlayer.stopVideo()
+      player.remove()
+    }
+  })
+
+  cards.forEach((card) => {
+    setupFeedbackCard(
+      card,
+      {
+        modal,
+        modalTitle,
+        modalDescription,
+      },
+    )
+  })
 }
 
-function setupFeedbackCard(cardNode) {}
+function setupFeedbackCard(cardNode, modalElements) {
+  const cardIndex = cardNode.dataset.feedbackCard
+  const cardData = window.feedbackCards[cardIndex]
+
+  if (!cardData) {
+    return
+  }
+
+  const {
+    modal,
+    modalTitle,
+    modalDescription,
+  } = modalElements
+
+  if (cardData.youtube_id) {
+    cardNode.classList.add('feedback-card_youtube')
+  }
+
+  cardNode.addEventListener('click', () => {
+    modalTitle.innerHTML = cardData.name
+    modalDescription.innerHTML = cardData.content || cardData.description
+
+    if (cardData.youtube_id) {
+      const player = document.createElement('lite-youtube')
+      player.setAttribute('videoid', cardData.youtube_id)
+      // player.setAttribute('js-api', 'js-api')
+      modalDescription.insertAdjacentElement('afterend', player)
+    }
+
+    openModal(modal)
+  })
+}
 
 function setupFeedbackCarousel() {
   const carousel = document.querySelector('[data-carousel="feedback"]')

@@ -125,6 +125,10 @@
     &:not(&_static):hover &__pattern {
       color: var(--feedback-card-color-dark);
     }
+
+    &:not(&_static):hover &__avatar {
+      box-shadow: 0 0 0 8px $white;
+    }
   }
 
   &:not(&_static):active {
@@ -138,7 +142,7 @@
   }
 
   &:not(&_static):active &__avatar {
-    box-shadow: 0 0 0 8px $white;
+    box-shadow: none;
   }
 
   & > *:not(svg) {
@@ -176,7 +180,7 @@
     }
   }
 
-  &:not(&_has-audio) &__text svg {
+  &:not(&_youtube) &__text svg {
     display: none;
   }
 
@@ -207,5 +211,15 @@
         height: 16px;
       }
     }
+  }
+}
+
+.feedback-modal {
+  .modal__description {
+    margin-bottom: 0;
+  }
+
+  .modal__description + lite-youtube {
+    margin-top: 20px;
   }
 }

@@ -24,4 +24,5 @@ export function openModal(modalNode) {
 export function closeModal(modalNode) {
   modalNode.classList.remove('modal_opened')
   document.body.style.removeProperty('overflow')
+  modalNode.dispatchEvent(new Event('modal-close'))
 }

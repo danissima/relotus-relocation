@@ -527,7 +527,7 @@
             <div class="carousel__viewport" data-carousel-viewport>
               <div class="carousel__container">
                 <div class="carousel__slide" data-carousel-slide>
-                  <div class="feedback-card" data-feedback-card>
+                  <div class="feedback-card" data-feedback-card="0">
                     <div class="feedback-card__avatar bg-cover"
                       style="background-image: url('./images/content/avatar-2.png');">
                     </div>
@@ -544,7 +544,7 @@
                   </div>
                 </div>
                 <div class="carousel__slide" data-carousel-slide>
-                  <div class="feedback-card" data-feedback-card>
+                  <div class="feedback-card" data-feedback-card="1">
                     <div class="feedback-card__avatar bg-cover"
                       style="background-image: url('./images/content/avatar-1.png');">
                     </div>
@@ -561,7 +561,7 @@
                   </div>
                 </div>
                 <div class="carousel__slide" data-carousel-slide>
-                  <div class="feedback-card" data-feedback-card>
+                  <div class="feedback-card" data-feedback-card="2">
                     <div class="feedback-card__avatar bg-cover"
                       style="background-image: url('./images/content/avatar-2.png');">
                     </div>
@@ -578,7 +578,7 @@
                   </div>
                 </div>
                 <div class="carousel__slide" data-carousel-slide>
-                  <div class="feedback-card" data-feedback-card>
+                  <div class="feedback-card" data-feedback-card="3">
                     <div class="feedback-card__avatar bg-cover"
                       style="background-image: url('./images/content/avatar-1.png');">
                     </div>
@@ -595,7 +595,7 @@
                   </div>
                 </div>
                 <div class="carousel__slide" data-carousel-slide>
-                  <div class="feedback-card" data-feedback-card>
+                  <div class="feedback-card" data-feedback-card="4">
                     <div class="feedback-card__avatar bg-cover"
                       style="background-image: url('./images/content/avatar-2.png');">
                     </div>
@@ -616,6 +616,7 @@
           </div>
         </div>
       </div>
+      <script> window.feedbackCards = [{ "name": "Елена Новикова", "description": "Переехала с семьей в 2023 году по стартап визе", "photo": "http://relotus-relocation/wp-content/uploads/2024/08/avatar-2.png", "content": "Я переехала с семьей в 2023 году по стартап визе и очень довольна", "youtube_id": "" }, { "name": "Иван Иванов", "description": "Переехал с семьей в 2023 году по стартап визе", "photo": "http://relotus-relocation/wp-content/uploads/2024/08/avatar-1.png", "content": "", "youtube_id": "dQw4w9WgXcQ" }]</script>
     </section>
   </main>
 
@@ -718,6 +719,22 @@
       </div>
     </div>
   </footer>
+
+  <div class="modal feedback-modal" data-modal="feedback">
+    <div class="modal__overlay" data-modal-overlay></div>
+    <div class="modal__body">
+      <button class="modal__close button-icon" type="button" data-modal-close>
+        <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="#cross-circle" />
+        </svg>
+      </button>
+      <div class="modal__content">
+        <h3 class="modal__title"" data-modal-title></h3>
+        <p class=" modal__description" data-modal-description>
+          </p>
+      </div>
+    </div>
+  </div>
 
   <div class="modal" data-modal="chances">
     <div class="modal__overlay" data-modal-overlay></div>

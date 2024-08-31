@@ -1,6 +1,7 @@
 import '../scss/app.scss';
 
 import Maska from './libs/maska.js'
+import './libs/lite-youtube.js'
 
 import './header.js'
 import './home.js'
