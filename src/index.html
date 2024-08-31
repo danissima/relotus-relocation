@@ -215,7 +215,7 @@
                 дней</mark>
             </h1>
             <p>Подберем лучший ВНЖ или визу под ваши цели и ситуацию</p>
-            <button class="button button_primary" type="button">
+            <button class="button button_primary" type="button" data-button="consultation">
               Бесплатная консультация
             </button>
           </div>
@@ -874,6 +874,55 @@
           </div>
           <button class="form__submit button button_primary" type="submit">
             Узнать шансы на переезд
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" data-modal="consultation">
+    <div class="modal__overlay" data-modal-overlay></div>
+    <div class="modal__body">
+      <button class="modal__close button-icon" type="button" data-modal-close>
+        <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="#cross-circle" />
+        </svg>
+      </button>
+      <div class="modal__content">
+        <h3 class="modal__title">Бесплатная консультация<br>о Стартап-визе в Испанию</h3>
+        <p class="modal__description">Заполните формы и мы расскажем особенности программы и&nbsp;подойдет ли вам этот
+          тип релокации</p>
+        <form class="chances-form form" data-form="consultation">
+          <div class="form__fields">
+            <div class="input">
+              <input type="text" placeholder="Ваше имя">
+            </div>
+
+            <div class="input">
+              <input type="tel" placeholder="Ваш номер телефона" data-maska="+###############">
+            </div>
+            <div class="input">
+              <input type="email" placeholder="Ваш E-mail">
+            </div>
+            <div class="checkbox">
+              <label class="checkbox__label" for="consultation-privacy">
+                <input class="checkbox__input" type="checkbox" checked id="consultation-privacy"
+                  name="privacy-agreement" required>
+                <div class="checkbox__checkmark">
+                  <svg width="14" height="14" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="#checkmark" />
+                  </svg>
+                </div>
+                <span>
+                  Я согласен с <a class="link" href="./privacy-policy.html" target="_blank">политикой обработки</a>
+                  персональных данных
+                  сайта
+                </span>
+              </label>
+            </div>
+          </div>
+          <button class="form__submit button button_primary" type="submit">
+            Оставить заявку
           </button>
         </form>
       </div>
