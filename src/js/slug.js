@@ -1,5 +1,6 @@
 import { setupAccordion, openAccordion } from './accordion.js'
 import setupCarousel from './carousel.js'
+import { openModal, setupModal } from './modal.js'
 
 setupDocumentsCarousel()
 setupDocumentsCards()
@@ -109,7 +110,23 @@ function setupTeamCarousel() {
 
 function setupYoutubeCarousel() {
   const carousel = document.querySelector('[data-carousel="slug-youtube"]')
-  if (!carousel) return
+  const modal = document.querySelector('[data-modal="youtube"]')
+  if (!carousel || !modal) return
+
+  setupModal(modal)
+
+  modal.addEventListener('modal-close', async () => {
+    const player = modal.querySelector('lite-youtube')
+    if (player) {
+      // const ytPlayer = await player.getYTPlayer();
+      // ytPlayer.stopVideo()
+      player.remove()
+    }
+  })
+
+  const modalTitle = modal.querySelector('[data-modal-title]')
+  const cards = carousel.querySelectorAll('[data-slug-youtube-card]')
+  cards.forEach((card) => setupYoutubeCard(card, { modal, modalTitle }))
 
   const carouselArrows = document.querySelector('[data-carousel-arrows="slug-youtube"]')
   const carouselSlides = carousel.querySelectorAll('[data-carousel-slide]')
@@ -134,4 +151,23 @@ function setupYoutubeCarousel() {
     },
     carouselArrows,
   )
+}
+
+function setupYoutubeCard(card, modalElements) {
+  const { modal, modalTitle } = modalElements
+  const cardTitle = card.querySelector('[data-title]')
+
+  card.addEventListener('click', async () => {
+    modalTitle.innerHTML = cardTitle.innerHTML
+
+    const player = document.createElement('lite-youtube')
+    player.setAttribute('videoid', card.dataset.slugYoutubeCard)
+    player.setAttribute('js-api', 'js-api')
+    modalTitle.insertAdjacentElement('afterend', player)
+
+    openModal(modal)
+
+    const ytPlayer = await player.getYTPlayer();
+    ytPlayer.playVideo()
+  })
 }
