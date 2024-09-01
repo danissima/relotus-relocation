@@ -555,7 +555,7 @@
   background-color: $soft-gray;
 
   &::before {
-    content: counter(step) ' шаг';
+    content: counter(step) ' ' attr(data-step);
     position: absolute;
     top: -20px;
     left: 50%;
@@ -636,6 +636,7 @@
   z-index: 1;
   transform: rotate(-2deg);
   border-radius: 16px;
+  width: 100%;
   height: 100%;
   max-height: 260px;
   padding: 24px;
