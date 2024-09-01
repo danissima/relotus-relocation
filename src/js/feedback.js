@@ -1,19 +1,16 @@
 import setupCarousel from './carousel.js'
 import { openModal, setupModal } from './modal.js'
 
-setupFeedbackCards()
+setupFeedbackModal()
+setupFeedbackCards('[data-feedback-section]', window.feedbackCards)
+setupFeedbackCards('[data-team-section]', window.teamCards)
 setupFeedbackCarousel()
 
-function setupFeedbackCards() {
-  const cards = document.querySelectorAll('[data-feedback-card]')
+function setupFeedbackModal() {
   const modal = document.querySelector('[data-modal="feedback"]')
-
-  if (!cards.length || !modal) {
+  if (!modal) {
     return
   }
-
-  const modalTitle = modal.querySelector('[data-modal-title]')
-  const modalDescription = modal.querySelector('[data-modal-description]')
 
   setupModal(modal)
 
@@ -25,6 +22,22 @@ function setupFeedbackCards() {
       player.remove()
     }
   })
+}
+
+function setupFeedbackCards(containerSelector, windowCards) {
+  const container = document.querySelector(containerSelector)
+  if (!container || !windowCards?.length) {
+    return
+  }
+
+  const cards = container.querySelectorAll('[data-feedback-card]')
+  const modal = document.querySelector('[data-modal="feedback"]')
+  if (!cards.length || !modal) {
+    return
+  }
+
+  const modalTitle = modal.querySelector('[data-modal-title]')
+  const modalDescription = modal.querySelector('[data-modal-description]')
 
   cards.forEach((card) => {
     setupFeedbackCard(
@@ -34,13 +47,14 @@ function setupFeedbackCards() {
         modalTitle,
         modalDescription,
       },
+      windowCards,
     )
   })
 }
 
-function setupFeedbackCard(cardNode, modalElements) {
+function setupFeedbackCard(cardNode, modalElements, cards) {
   const cardIndex = cardNode.dataset.feedbackCard
-  const cardData = window.feedbackCards[cardIndex]
+  const cardData = cards[cardIndex]
 
   if (!cardData) {
     return
