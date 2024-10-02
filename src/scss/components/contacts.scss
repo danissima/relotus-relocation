@@ -78,9 +78,8 @@
   }
 
   @include break($md) {
-    .block,
-    .breadcrumbs {
-      margin-top: 20px;
+    .block {
+      margin-top: 0;
     }
 
     .block {

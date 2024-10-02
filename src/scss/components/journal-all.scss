@@ -59,8 +59,7 @@
   }
 
   @include break($md) {
-    &__header,
-    .breadcrumbs {
+    &__header {
       margin-top: 20px;
     }
 

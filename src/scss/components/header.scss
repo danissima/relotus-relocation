@@ -60,6 +60,20 @@
 
   &__burger {
     color: $orange;
+
+    svg:nth-child(2) {
+      display: none;
+    }
+  }
+
+  &_full &__burger {
+    svg:first-child {
+      display: none;
+    }
+
+    svg:nth-child(2) {
+      display: block;
+    }
   }
 
   @include break($xxl) {

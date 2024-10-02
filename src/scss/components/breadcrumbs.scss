@@ -25,9 +25,6 @@
   }
 
   @include break($md) {
-    &__item {
-      font-size: 12px;
-      line-height: 17px;
-    }
+    display: none;
   }
 }

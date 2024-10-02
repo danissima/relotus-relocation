@@ -109,7 +109,7 @@
 
   @include break($md) {
     &__text {
-      padding-top: 20px;
+      padding-top: 0;
 
       h1 {
         margin-bottom: 20px;
