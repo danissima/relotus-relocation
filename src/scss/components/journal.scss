@@ -163,7 +163,7 @@
     height: 264px;
   }
 
-  h4 a {
+  .h4 a {
     display: inline-block;
     padding-top: 20px;
     transition: color $transition;
@@ -171,14 +171,14 @@
   }
 
   @include hover {
-    &__image:hover ~ h4 a,
-    h4 a:hover {
+    &__image:hover ~ .h4 a,
+    .h4 a:hover {
       color: $orange;
     }
   }
 
-  &__image:hover ~ h4 a,
-  h4 a:active {
+  &__image:active ~ .h4 a,
+  .h4 a:active {
     color: darken($orange, 5%);
   }
 
