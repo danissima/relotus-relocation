@@ -1,0 +1,16 @@
+.not-found {
+  h1 {
+    margin-top: 20px;
+  }
+
+  p {
+    margin-top: 16px;
+    font-size: 18px;
+  }
+
+  @include break($md) {
+    p {
+      font-size: 16px;
+    }
+  }
+}
