@@ -93,11 +93,13 @@
   --feedback-card-color: #{$blue};
   --feedback-card-color-dark: #{darken($blue, 5%)};
   position: relative;
+  display: block;
   border-radius: 16px;
   padding: 24px;
   background-color: $soft-gray;
   transition: background-color $transition;
   overflow: hidden;
+  color: inherit;
 
   &_orange {
     --feedback-card-color: #{$orange};
