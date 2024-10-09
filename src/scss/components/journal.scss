@@ -157,6 +157,21 @@
 }
 
 .journal-card {
+  position: relative;
+
+  &__badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    border-radius: 24px;
+    padding: 4px 12px;
+    background-color: $orange;
+    font-size: 12px;
+    line-height: 17.09px;
+    color: $white;
+    pointer-events: none;
+  }
+
   &__image {
     display: block;
     border-radius: 16px;
