@@ -1,0 +1,114 @@
+.story {
+  &__header,
+  .breadcrumbs {
+    margin-top: 50px;
+  }
+
+  &__header,
+  &__content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px 56px;
+  }
+
+  &__header {
+    margin-bottom: 50px;
+
+    time {
+      text-align: right;
+      color: $dark;
+      font-size: 18px;
+      line-height: 25.38px;
+    }
+  }
+
+  &__content {
+    grid-template-areas:
+      'text author'
+      'share author';
+  }
+
+  &__author {
+    .block {
+      position: sticky;
+      top: var(--main-padding-top);
+    }
+
+    .article-author__content {
+      margin-block: 0;
+    }
+  }
+
+  &__quote {
+    margin-top: 20px;
+  }
+
+  &__share {
+    grid-area: 'share';
+    display: flex;
+    align-items: center;
+
+    p {
+      margin-right: 16px;
+      font-weight: 700;
+    }
+
+    .ya-share2__list.ya-share2__list_direction_horizontal > .ya-share2__item {
+      margin-right: 8px;
+    }
+
+    .ya-share2__icon {
+      background-size: 32px 32px !important;
+      width: 40px !important;
+      height: 40px !important;
+    }
+  }
+
+  @include break($lg) {
+    &__header,
+    &__content {
+      grid-template-columns: 1fr;
+    }
+
+    &__header {
+      gap: 10px;
+      margin-bottom: 30px;
+
+      time {
+        text-align: left;
+      }
+    }
+
+    &__content {
+      grid-template-areas:
+        'author'
+        'text'
+        'share';
+      gap: 20px;
+    }
+
+    &__author {
+      position: static;
+    }
+
+    &__text {
+      .block {
+        --block-padding-x: 0;
+        background-color: transparent;
+      }
+    }
+  }
+
+  @include break($md) {
+    &__header {
+      margin-top: 20px;
+    }
+
+    &__header {
+      time {
+        font-size: 13px;
+        line-height: 18.33px;
+      }
+    }
+  }
+}
