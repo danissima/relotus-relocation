@@ -1,12 +1,11 @@
-.privacy-policy {
+.text-page {
   --breadcrumbs-margin: 50px;
   h1,
   .breadcrumbs {
     margin-top: var(--breadcrumbs-margin);
   }
 
-  h1,
-  .block {
+  & > .container > *:not(.breadcrumbs) {
     max-width: 848px;
   }
 
@@ -14,7 +13,18 @@
     margin-bottom: var(--breadcrumbs-margin);
   }
 
+  &__banner {
+    border-radius: 20px;
+    overflow: hidden;
+    height: 426px;
+    margin-bottom: var(--breadcrumbs-margin);
+  }
+
   @include break($md) {
     --breadcrumbs-margin: 20px;
+
+    &__banner {
+      height: 240px;
+    }
   }
 }
