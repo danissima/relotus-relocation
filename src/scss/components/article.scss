@@ -60,6 +60,27 @@
     }
   }
 
+  &__share {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+
+    p {
+      margin-right: 16px;
+      font-weight: 700;
+    }
+
+    .ya-share2__list.ya-share2__list_direction_horizontal > .ya-share2__item {
+      margin-right: 8px;
+    }
+
+    .ya-share2__icon {
+      background-size: 32px 32px !important;
+      width: 40px !important;
+      height: 40px !important;
+    }
+  }
+
   @include break($lg) {
     &__header,
     &__content {
