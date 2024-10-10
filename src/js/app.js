@@ -13,5 +13,6 @@ import './journal.js'
 import './article.js'
 import './chances-form.js'
 import './consultation-form.js'
+import './about-us.js'
 
 const mask = new Maska.MaskInput('[data-maska]')

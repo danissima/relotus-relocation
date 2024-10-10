@@ -141,7 +141,7 @@
     display: flex;
     align-items: center;
     height: 100%;
-    padding: 0 20px;
+    padding: 0 16px;
     transition: color $transition;
     color: $dark;
   }
@@ -200,7 +200,7 @@
   @include break($xl) {
     &__item > span,
     &__item > a {
-      padding: 0 15px;
+      padding: 0 10px;
     }
   }
 }
