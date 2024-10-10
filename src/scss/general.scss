@@ -642,7 +642,7 @@ main > article + section {
     margin: revert;
   }
 
-  & > *:not(h2, h3) {
+  & > *:not(h1, h2, h3, h4) {
     font-size: 18px;
     line-height: 25.38px;
   }
@@ -669,9 +669,19 @@ main > article + section {
   }
 
   @include break($md) {
-    & > *:not(h2, h3) {
+    & > *:not(h1, h2, h3, h4) {
       font-size: 14px;
       line-height: 20px;
+    }
+
+    table {
+      display: block;
+      overflow: auto;
+      border: none
+    }
+
+    table td {
+      padding: 12px;
     }
   }
 }

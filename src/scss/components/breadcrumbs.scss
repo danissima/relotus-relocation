@@ -10,7 +10,7 @@
     white-space: nowrap;
 
     & + &::before {
-      content: '—';
+      content: "\2015";
       margin-left: 0.25em;
     }
 

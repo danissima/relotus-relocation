@@ -93,7 +93,9 @@
   --feedback-card-color: #{$blue};
   --feedback-card-color-dark: #{darken($blue, 5%)};
   position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   border-radius: 16px;
   padding: 24px;
   background-color: $soft-gray;
@@ -159,6 +161,7 @@
   }
 
   .h4 {
+    margin-top: auto;
     transition: color $transition;
   }
 
