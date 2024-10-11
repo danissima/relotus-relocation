@@ -38,6 +38,9 @@
   }
 
   &__phone {
+    font-size: 14px;
+    line-height: 19.94px;
+
     svg {
       margin-right: 10px;
       color: $blue;
@@ -144,6 +147,8 @@
     padding: 0 16px;
     transition: color $transition;
     color: $dark;
+    font-size: 14px;
+    line-height: 19.94px;
   }
 
   &__subcontent {
@@ -192,6 +197,9 @@
   }
 
   &__subitem {
+    font-size: 14px;
+    line-height: 19.94px;
+
     & + & {
       margin-top: 8px;
     }
@@ -200,7 +208,7 @@
   @include break($xl) {
     &__item > span,
     &__item > a {
-      padding: 0 10px;
+      padding: 0 8px;
     }
   }
 }

@@ -225,6 +225,7 @@
 
   &__image {
     border-radius: var(--radius);
+    overflow: hidden;
   }
 
   &__info {
