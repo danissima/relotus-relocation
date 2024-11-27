@@ -1,4 +1,20 @@
+import setupCarousel from './carousel.js'
+
+setupJournalTags()
 setupArticleAnchors()
+
+function setupJournalTags() {
+  const carousel = document.querySelector('[data-carousel="article-tags"]')
+  if (!carousel) return
+
+  setupCarousel(
+    carousel,
+    {
+      align: 'start',
+      dragFree: true,
+    },
+  )
+}
 
 function setupArticleAnchors() {
   const article = document.querySelector('[data-article]')
