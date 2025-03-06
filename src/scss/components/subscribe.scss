@@ -1,0 +1,84 @@
+.subscribe {
+  position: relative;
+  display: flex;
+  gap: 36px;
+  background-color: $blue;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -30px;
+    right: -377px;
+    z-index: 0;
+    border-radius: 50%;
+    width: 698px;
+    height: 698px;
+    background-color: $darky-blue;
+  }
+
+  &__text {
+    max-width: calc(100% - 260px - 36px);
+    z-index: 2;
+  }
+
+  .h2 {
+    color: $white;
+    margin-bottom: 20px;
+  }
+
+  &__image {
+    position: absolute;
+    top: 25px;
+    z-index: 1;
+    right: 25px;
+    width: 100%;
+    max-width: 260px;
+  }
+
+  @include break($xxl) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    padding-bottom: 0;
+
+    &::after {
+      top: auto;
+      right: auto;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -496px;
+    }
+
+    &__text {
+      max-width: none;
+    }
+
+    .h2 {
+      margin-bottom: 0;
+    }
+
+    .button {
+      position: absolute;
+      bottom: var(--block-padding-y);
+      left: var(--block-padding-x);
+      width: calc(100% - var(--block-padding-x) * 2);
+    }
+
+    &__image {
+      position: static;
+      margin-bottom: -100px;
+    }
+  }
+
+  @include break($md) {
+    gap: 10px;
+
+    .h2 {
+      font-size: 24px;
+      line-height: 120%;
+    }
+  }
+}

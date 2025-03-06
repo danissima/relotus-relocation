@@ -157,7 +157,7 @@
     // }
 
     &__text {
-      .block {
+      & > .block {
         --block-padding-x: 0;
         background-color: transparent;
       }

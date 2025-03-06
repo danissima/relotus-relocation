@@ -110,6 +110,10 @@ main > article + section {
     --block-padding-y: var(--block-padding-x);
   }
 
+  &_small {
+    --block-padding-y: 45px;
+  }
+
   @include break($md) {
     --block-padding-x: 30px;
 
@@ -135,6 +139,22 @@ main > article + section {
   &_primary {
     background-color: $orange;
     color: $white;
+
+    @include hover {
+      &:hover {
+        background-color: lighten($orange, 5%);
+      }
+    }
+
+    &:active {
+      background-color: darken($orange, 5%);
+    }
+  }
+
+  &_primary-outlined {
+    background-color: $orange;
+    color: $white;
+    border: 2px solid $white;
 
     @include hover {
       &:hover {
