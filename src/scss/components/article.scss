@@ -96,6 +96,18 @@
     }
   }
 
+  &__also {
+    margin-top: 20px;
+
+    .h3 {
+      color: $dark;
+    }
+  }
+
+  &__text &__also {
+    display: none;
+  }
+
   &__share {
     grid-area: 'share';
     display: flex;
@@ -155,6 +167,18 @@
     // &__anchors {
     //   position: static;
     // }
+
+    &__also {
+      display: none;
+    }
+
+    &__text &__also {
+      display: block;
+      
+      .h3 {
+        margin-bottom: 12px;
+      }
+    }
 
     &__text {
       & > .block {

@@ -25,7 +25,7 @@ function setupArticleAnchors() {
     return
   }
 
-  const headings = article.querySelectorAll('h2, h3')
+  const headings = article.querySelectorAll('h2:not([data-exclude]), h3:not([data-exclude])')
   let currentAnchorId = ''
   const SCROLL_MARGIN_TOP = 106
 
