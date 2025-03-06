@@ -70,6 +70,9 @@
   }
 
   &__anchors {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     // .block {
     //   position: sticky;
     //   top: var(--main-padding-top);
@@ -96,9 +99,20 @@
     }
   }
 
-  &__also {
-    margin-top: 20px;
+  &__ripple {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    width: 100%;
 
+    svg {
+      color: transparent;
+      margin: -8px;
+    }
+  }
+
+  &__also {
     .h3 {
       color: $dark;
     }
