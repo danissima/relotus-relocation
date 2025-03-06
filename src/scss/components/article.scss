@@ -70,10 +70,10 @@
   }
 
   &__anchors {
-    .block {
-      position: sticky;
-      top: var(--main-padding-top);
-    }
+    // .block {
+    //   position: sticky;
+    //   top: var(--main-padding-top);
+    // }
 
     .h3 {
       margin-bottom: 20px;
@@ -152,9 +152,9 @@
       gap: 20px;
     }
 
-    &__anchors {
-      position: static;
-    }
+    // &__anchors {
+    //   position: static;
+    // }
 
     &__text {
       .block {
@@ -230,10 +230,12 @@
   }
 
   &__avatar {
+    border-radius: 50%;
     min-width: 80px;
     max-width: 80px;
     margin-right: 20px;
     height: 80px;
+    overflow: hidden;
   }
 
   &__position {
